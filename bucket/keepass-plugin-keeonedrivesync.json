@@ -1,0 +1,21 @@
+{
+  "version": "3.2.1.0",
+  "description": "KeePass plugin for synchronizing password databases with OneDrive and SharePoint",
+  "homepage": "https://github.com/KoenZomers/KeePassOneDriveSync",
+  "license": "EPL-1.0",
+  "depends": "extras/keepass",
+  "url": "https://github.com/KoenZomers/KeePassOneDriveSync/releases/download/3.2.1.0/KeeOneDriveSync-3.2.1.0.plgx",
+  "hash": "07a618224ff33d7b72e21baacf4356a562ae774e4192bac235bdb6d8d290647f",
+  "installer": {
+    "script": "Copy-Item \"$dir\\KeeOneDriveSync-$version.plgx\" \"$(appdir keepass $global)\\current\\Plugins\""
+  },
+  "uninstaller": {
+    "script": "Remove-Item \"$(appdir keepass $global)\\current\\Plugins\\KeeOneDriveSync-$version.plgx\""
+  },
+  "checkver": {
+    "github": "https://github.com/KoenZomers/KeePassOneDriveSync"
+  },
+  "autoupdate": {
+    "url": "https://github.com/KoenZomers/KeePassOneDriveSync/releases/download/$version/KeeOneDriveSync-$version.plgx"
+  }
+}
